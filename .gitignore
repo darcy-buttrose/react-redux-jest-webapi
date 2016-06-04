@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/config
+/packages
+/Web/bin
+/Web/obj/Debug
+/WebApi/obj/Debug
