@@ -7,3 +7,5 @@
 /Web/bin
 /Web/obj/Debug
 /WebApi/obj/Debug
+/Web/.idea
+/Web/node_modules
