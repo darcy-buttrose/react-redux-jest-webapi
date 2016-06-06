@@ -42,10 +42,7 @@ export default class NewTodoItem extends React.Component<INewTodoItemProps,INewT
     }
 
     onSave() {
-         this.props.onSave({
-             key: Keys.AddTodo,
-             payload: this.state.task
-         })
+         this.props.onSave(this.state.task);
     }
 
     _updateState(props : INewTodoItemProps) {

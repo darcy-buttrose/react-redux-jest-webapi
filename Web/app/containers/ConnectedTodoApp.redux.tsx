@@ -1,6 +1,7 @@
 /**
  * Created by Darcy on 29/05/2016.
  */
+/// <reference path="../../typings/index.d.ts" />
 import {connect} from 'react-redux';
 import TodoApp from '../components/TodoApp.react';
 import {IState} from "../Models/IState";

@@ -29,9 +29,12 @@ function nextIdReducer(state:number,action:IAction):number {
 }
 
 function todosReducer(state:List<ITask>, action:IAction):List<ITask> {
+        console.log(`todosReducer: Action(${JSON.stringify(action)})`);
         switch(action.type) {
                 case Keys.AddTodo:
-                        return List<ITask>(state.concat([action.payload]))
+                    var todos: List<ITask> = List<ITask>(state.concat([action.payload]));
+                    console.log(`todosReducer: todos(${JSON.stringify(todos)})`);
+                    return todos;
                 case Keys.CompleteTodo:
                         return List<ITask>(state.map((task:ITask) => {
                                 if (task.Id === action.payload.Id) {
