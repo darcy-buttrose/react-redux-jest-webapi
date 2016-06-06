@@ -11,7 +11,7 @@ const config = {
   // Project Structure
   // ----------------------------------
   path_base  : path.resolve(__dirname, '..'),
-  dir_client : 'src',
+  dir_client : 'app',
   dir_dist   : 'dist',
   dir_server : 'server',
   dir_test   : 'tests',
@@ -37,11 +37,8 @@ const config = {
     colors : true
   },
   compiler_vendor : [
-    'history',
     'react',
     'react-redux',
-    'react-router',
-    'react-router-redux',
     'redux'
   ],
 
