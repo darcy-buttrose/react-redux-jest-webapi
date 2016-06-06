@@ -8,13 +8,13 @@ import NewTodoItem from "./NewTodoItem.react";
 import {IState} from "../Models/IState";
 import {connect} from "react-redux";
 
-interface ITodoAppProps { nextId:number; todos: List<ITask>; onCompleteChanged: Function; onDelete: Function; onSave:Function }
+interface ITodoAppProps { nextId:number; todos: List<ITask>; onCompleteChanged: (payload: any) => void; onDelete: (payload: any) => void; onSave:(payload: any) => void }
 interface ITodoAppState { nextId:number; todos: List<ITask> }
 
 export default class TodoApp extends React.Component<ITodoAppProps, ITodoAppState> {
-    onSave: Function;
-    onCompleteChanged: Function;
-    onDelete: Function;
+    onSave: (payload: any) => void;
+    onCompleteChanged: (payload: any) => void;
+    onDelete: (payload: any) => void;
 
     constructor(props) {
         super(props);
