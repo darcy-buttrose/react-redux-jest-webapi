@@ -8,7 +8,7 @@ import _debug from 'debug';
 
 const debug = _debug('app:webpack:config');
 const paths = config.utils_paths;
-const {__DEV__, __PROD__, __TEST__} = config.globals;
+const {__GULP__, __DEV__, __PROD__, __TEST__} = config.globals;
 
 debug('Create configuration.');
 const webpackConfig = {
@@ -25,7 +25,7 @@ const webpackConfig = {
 // ------------------------------------
 // Entry Points
 // ------------------------------------
-const APP_ENTRY_PATH = paths.base(config.dir_client) + '/entry.tsx';
+const APP_ENTRY_PATH = __GULP__ ? paths.base(config.dir_gulp_client) + '/entry.jsx' : paths.base(config.dir_client) + '/entry.tsx';
 
 webpackConfig.entry = {
   app: __DEV__
@@ -102,6 +102,7 @@ webpackConfig.tslint = {
   emitWarning: __DEV__
 };
 
+
 // ------------------------------------
 // Loaders
 // ------------------------------------
@@ -110,6 +111,10 @@ webpackConfig.module.loaders = [{
   test: /\.(ts|tsx)$/,
   exclude: /node_modules/,
   loader: 'babel!ts-loader',
+},{
+  test: /\.(js|jsx)$/,
+  exclude: /node_modules/,
+  loader: 'babel',
 },
 {
   test: /\.json$/,

@@ -11,7 +11,7 @@ const karmaConfig = {
   files: [
     './node_modules/phantomjs-polyfill/bind-polyfill.js',
     {
-      pattern: `./${config.dir_test}/test-bundler.js`,
+      pattern: `./${config.dir_test}/test-bundler.ts`,
       watched: false,
       served: true,
       included: true
@@ -21,7 +21,7 @@ const karmaConfig = {
   frameworks: ['mocha'],
   reporters: ['mocha'],
   preprocessors: {
-    [`${config.dir_test}/test-bundler.js`]: ['webpack']
+    [`${config.dir_test}/test-bundler.ts`]: ['webpack']
   },
   browsers: ['PhantomJS'],
   webpack: {

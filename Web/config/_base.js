@@ -12,6 +12,7 @@ const config = {
   // ----------------------------------
   path_base  : path.resolve(__dirname, '..'),
   dir_client : 'app',
+  dir_gulp_client : 'appdist',
   dir_dist   : 'dist',
   dir_server : 'server',
   dir_test   : 'tests',
@@ -70,6 +71,7 @@ config.globals = {
     'NODE_ENV' : JSON.stringify(config.env)
   },
   'NODE_ENV'     : config.env,
+  '__GULP__'     : !!argv.gulp,
   '__DEV__'      : config.env === 'development',
   '__PROD__'     : config.env === 'production',
   '__TEST__'     : config.env === 'test',
